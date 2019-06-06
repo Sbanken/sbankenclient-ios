@@ -99,7 +99,7 @@ public class SbankenClient: NSObject {
             let urlString = "\(Constants.baseUrl)/exec.bank/api/v1/Transfers"
             guard var request = self.urlRequest(urlString, token: token!) else { return }
             
-            let transferRequest = TransferRequest(fromAccount: fromAccount, toAccount: toAccount, message: message, amount: amount)
+          let transferRequest = TransferRequest(fromAccountId: fromAccount, toAccountId: toAccount, message: message, amount: amount)
             
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")

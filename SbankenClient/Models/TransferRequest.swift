@@ -9,8 +9,8 @@
 import Foundation
 
 public struct TransferRequest: Codable {
-    public var fromAccount: String
-    public var toAccount: String
+    public var fromAccountId: String
+    public var toAccountId: String
     public var message: String
     public var amount: Float
 }

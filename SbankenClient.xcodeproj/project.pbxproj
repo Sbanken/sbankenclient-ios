@@ -21,6 +21,7 @@
 		138E9E5F1F88F7D3000F8A2E /* SbankenClientAccountsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E9E5E1F88F7D3000F8A2E /* SbankenClientAccountsTests.swift */; };
 		138E9E611F88F7D3000F8A2E /* SbankenClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 138E9E531F88F7D3000F8A2E /* SbankenClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		138E9E6B1F88F83D000F8A2E /* SbankenClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E9E6A1F88F83D000F8A2E /* SbankenClient.swift */; };
+		13934433215409B0002F07DA /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13934432215409B0002F07DA /* RequestHelper.swift */; };
 		13DDFDAC1F8921EF009811A7 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DDFDAB1F8921EF009811A7 /* Transaction.swift */; };
 		13ED8FF31F8D55DE00D8A7D0 /* DoubleShortDisplayValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ED8FF21F8D55DE00D8A7D0 /* DoubleShortDisplayValueTests.swift */; };
 		13F5C8421F8FE13100199987 /* MockUrlSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F5C8411F8FE13100199987 /* MockUrlSession.swift */; };
@@ -30,6 +31,17 @@
 		8B580FF91FCCA3AD0079A2BC /* TransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B580FF81FCCA3AD0079A2BC /* TransferResponse.swift */; };
 		8B580FFC1FCCA63C0079A2BC /* TransferRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B580FFB1FCCA63C0079A2BC /* TransferRequest.swift */; };
 		8BA9EAB1205FD63500677F16 /* CardDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA9EAB0205FD63500677F16 /* CardDetails.swift */; };
+		8BC1A89E212C63C200BD0657 /* EFaktura.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC1A89D212C63C200BD0657 /* EFaktura.swift */; };
+		8BC1A8A1212C655400BD0657 /* EFakturasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC1A8A0212C655400BD0657 /* EFakturasResponse.swift */; };
+		8BC1A8A4212C701500BD0657 /* EFakturaPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC1A8A3212C701500BD0657 /* EFakturaPaymentRequest.swift */; };
+		8BC1A8A7212C709500BD0657 /* EFakturaPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC1A8A6212C709500BD0657 /* EFakturaPaymentResponse.swift */; };
+		8EE0BDD12358B2CE0063DC36 /* EFakturasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC1A8A0212C655400BD0657 /* EFakturasResponse.swift */; };
+		8EE0BDD22358B2D20063DC36 /* EFaktura.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC1A89D212C63C200BD0657 /* EFaktura.swift */; };
+		8EE0BDD32358B2D80063DC36 /* EFakturaPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC1A8A3212C701500BD0657 /* EFakturaPaymentRequest.swift */; };
+		8EE0BDD42358B2DB0063DC36 /* EFakturaPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC1A8A6212C709500BD0657 /* EFakturaPaymentResponse.swift */; };
+		8EE0BDD52358B34E0063DC36 /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13934432215409B0002F07DA /* RequestHelper.swift */; };
+		8EE0BDD72358BD4A0063DC36 /* EFakturaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE0BDD62358BD4A0063DC36 /* EFakturaResponse.swift */; };
+		8EE0BDD82358BD710063DC36 /* EFakturaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE0BDD62358BD4A0063DC36 /* EFakturaResponse.swift */; };
 		DF793C62200E2FA400BD8800 /* SbankenClientTransferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF793C61200E2FA400BD8800 /* SbankenClientTransferTests.swift */; };
 		EB2E2F51218B08EE00CC2AEE /* ClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E2F50218B08EE00CC2AEE /* ClientError.swift */; };
 		EBC9A6CC2347564600B3808F /* CardsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC9A6CB2347564600B3808F /* CardsResponse.swift */; };
@@ -89,6 +101,7 @@
 		138E9E5E1F88F7D3000F8A2E /* SbankenClientAccountsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SbankenClientAccountsTests.swift; sourceTree = "<group>"; };
 		138E9E601F88F7D3000F8A2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		138E9E6A1F88F83D000F8A2E /* SbankenClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SbankenClient.swift; sourceTree = "<group>"; };
+		13934432215409B0002F07DA /* RequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHelper.swift; sourceTree = "<group>"; };
 		13DDFDAB1F8921EF009811A7 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		13ED8FF21F8D55DE00D8A7D0 /* DoubleShortDisplayValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleShortDisplayValueTests.swift; sourceTree = "<group>"; };
 		13F5C8411F8FE13100199987 /* MockUrlSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUrlSession.swift; sourceTree = "<group>"; };
@@ -98,6 +111,11 @@
 		8B580FF81FCCA3AD0079A2BC /* TransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferResponse.swift; sourceTree = "<group>"; };
 		8B580FFB1FCCA63C0079A2BC /* TransferRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferRequest.swift; sourceTree = "<group>"; };
 		8BA9EAB0205FD63500677F16 /* CardDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetails.swift; sourceTree = "<group>"; };
+		8BC1A89D212C63C200BD0657 /* EFaktura.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFaktura.swift; sourceTree = "<group>"; };
+		8BC1A8A0212C655400BD0657 /* EFakturasResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFakturasResponse.swift; sourceTree = "<group>"; };
+		8BC1A8A3212C701500BD0657 /* EFakturaPaymentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFakturaPaymentRequest.swift; sourceTree = "<group>"; };
+		8BC1A8A6212C709500BD0657 /* EFakturaPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFakturaPaymentResponse.swift; sourceTree = "<group>"; };
+		8EE0BDD62358BD4A0063DC36 /* EFakturaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFakturaResponse.swift; sourceTree = "<group>"; };
 		DF793C61200E2FA400BD8800 /* SbankenClientTransferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SbankenClientTransferTests.swift; sourceTree = "<group>"; };
 		EB2E2F50218B08EE00CC2AEE /* ClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientError.swift; sourceTree = "<group>"; };
 		EBC9A6CB2347564600B3808F /* CardsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsResponse.swift; sourceTree = "<group>"; };
@@ -175,6 +193,11 @@
 				8B580FFB1FCCA63C0079A2BC /* TransferRequest.swift */,
 				EBC9A6CB2347564600B3808F /* CardsResponse.swift */,
 				EBC9A6CE234757E200B3808F /* Card.swift */,
+				8BC1A89D212C63C200BD0657 /* EFaktura.swift */,
+				8EE0BDD62358BD4A0063DC36 /* EFakturaResponse.swift */,
+				8BC1A8A0212C655400BD0657 /* EFakturasResponse.swift */,
+				8BC1A8A3212C701500BD0657 /* EFakturaPaymentRequest.swift */,
+				8BC1A8A6212C709500BD0657 /* EFakturaPaymentResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				134AF42D1F8BF80F00114652 /* AccessTokenManager.swift */,
+				13934432215409B0002F07DA /* RequestHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -360,7 +384,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = SBanken;
 				TargetAttributes = {
 					138E9E4F1F88F7D3000F8A2E = {
@@ -448,10 +472,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE0BDD72358BD4A0063DC36 /* EFakturaResponse.swift in Sources */,
 				EB2E2F51218B08EE00CC2AEE /* ClientError.swift in Sources */,
 				8BA9EAB1205FD63500677F16 /* CardDetails.swift in Sources */,
 				137A2B711F88FA54003BDEAC /* Account.swift in Sources */,
 				13DDFDAC1F8921EF009811A7 /* Transaction.swift in Sources */,
+				8BC1A8A1212C655400BD0657 /* EFakturasResponse.swift in Sources */,
 				131491F11F8C9098000B91C2 /* TransactionResponse.swift in Sources */,
 				EBC9A6D32347597900B3808F /* CardStatus.swift in Sources */,
 				8B580FFC1FCCA63C0079A2BC /* TransferRequest.swift in Sources */,
@@ -459,9 +485,13 @@
 				EBC9A6CC2347564600B3808F /* CardsResponse.swift in Sources */,
 				8B580FF51FCC9C090079A2BC /* AccountsResponse.swift in Sources */,
 				8B580FF91FCCA3AD0079A2BC /* TransferResponse.swift in Sources */,
+				8BC1A89E212C63C200BD0657 /* EFaktura.swift in Sources */,
 				8B580FF31FCC9AC80079A2BC /* AccessToken.swift in Sources */,
+				8BC1A8A7212C709500BD0657 /* EFakturaPaymentResponse.swift in Sources */,
+				8BC1A8A4212C701500BD0657 /* EFakturaPaymentRequest.swift in Sources */,
 				138E9E6B1F88F83D000F8A2E /* SbankenClient.swift in Sources */,
 				134AF42E1F8BF80F00114652 /* AccessTokenManager.swift in Sources */,
+				13934433215409B0002F07DA /* RequestHelper.swift in Sources */,
 				13074D1B1F9081A800427720 /* SURLSessionProtocol.swift in Sources */,
 				1355DF111F8D54AA005D4523 /* Double+shortDisplayValue.swift in Sources */,
 				137A2B731F88FCC2003BDEAC /* Constants.swift in Sources */,
@@ -490,11 +520,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE0BDD82358BD710063DC36 /* EFakturaResponse.swift in Sources */,
 				EBCCE2CD2332277400F0B3AE /* SURLSessionProtocol.swift in Sources */,
 				EBCCE2CE2332277400F0B3AE /* String+urlParameters.swift in Sources */,
 				EBCCE2CF2332277400F0B3AE /* Double+shortDisplayValue.swift in Sources */,
 				EBCCE2D02332277400F0B3AE /* AccessTokenManager.swift in Sources */,
+				8EE0BDD22358B2D20063DC36 /* EFaktura.swift in Sources */,
 				EBCCE2D12332277400F0B3AE /* Account.swift in Sources */,
+				8EE0BDD42358B2DB0063DC36 /* EFakturaPaymentResponse.swift in Sources */,
 				EBC9A6D42347597900B3808F /* CardStatus.swift in Sources */,
 				EBCCE2D22332277400F0B3AE /* AccountsResponse.swift in Sources */,
 				EBC9A6D0234757E200B3808F /* Card.swift in Sources */,
@@ -502,9 +535,12 @@
 				EBCCE2D32332277400F0B3AE /* Transaction.swift in Sources */,
 				EBCCE2D42332277400F0B3AE /* TransactionResponse.swift in Sources */,
 				EBCCE2D52332277400F0B3AE /* CardDetails.swift in Sources */,
+				8EE0BDD32358B2D80063DC36 /* EFakturaPaymentRequest.swift in Sources */,
+				8EE0BDD52358B34E0063DC36 /* RequestHelper.swift in Sources */,
 				EBCCE2D62332277400F0B3AE /* AccessToken.swift in Sources */,
 				EBCCE2D72332277400F0B3AE /* TransferResponse.swift in Sources */,
 				EBCCE2D82332277400F0B3AE /* TransferRequest.swift in Sources */,
+				8EE0BDD12358B2CE0063DC36 /* EFakturasResponse.swift in Sources */,
 				EBCCE2D92332277400F0B3AE /* SbankenClient.swift in Sources */,
 				EBCCE2DA2332277400F0B3AE /* Constants.swift in Sources */,
 				EBC9A6D723475DD300B3808F /* CardProductCode.swift in Sources */,

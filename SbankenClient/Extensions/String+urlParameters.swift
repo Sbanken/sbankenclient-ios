@@ -9,7 +9,7 @@
 // https://stackoverflow.com/a/27724627
 
 extension String {
-    
+
     /// Percent escapes values to be added to a URL query as specified in RFC 3986
     ///
     /// This percent-escapes all characters besides the alphanumeric character set and "-", ".", "_", and "~".
@@ -17,14 +17,14 @@ extension String {
     /// http://www.ietf.org/rfc/rfc3986.txt
     ///
     /// - returns: Returns percent-escaped string.
-    
+
     func addingPercentEncodingForURLQueryValue() -> String? {
         let generalDelimitersToEncode = ":#[]@" // does not include "?" or "/" due to RFC 3986 - Section 3.4
         let subDelimitersToEncode = "!$&'()*+,;="
         
         var allowed = CharacterSet.urlQueryAllowed
         allowed.remove(charactersIn: generalDelimitersToEncode + subDelimitersToEncode)
-        
+
         return addingPercentEncoding(withAllowedCharacters: allowed)
     }
     
@@ -50,8 +50,6 @@ extension Dictionary {
             let percentEscapedValue = value.addingPercentEncodingForURLQueryValue()!
             return "\(percentEscapedKey)=\(percentEscapedValue)"
         }
-        
         return parameterArray.joined(separator: "&")
     }
-    
 }

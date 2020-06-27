@@ -35,22 +35,21 @@ open class SbankenClient: NSObject {
             }
             
             guard date != nil else {
-                throw DecodingError.dataCorruptedError(in: container, debugDescription: "Cannot decode date string \(dateString)")
+                throw DecodingError.dataCorruptedError(
+                    in: container,
+                    debugDescription: "Cannot decode date string \(dateString)")
             }
             
             return date!
         })
         
-        // 19
-        // 2021-04-01T00:00:00
-        //jsonDecoder.dateDecodingStrategy = .iso8601
         return jsonDecoder
     }()
     public var encoder: JSONEncoder = {
         let jsonEncoder = JSONEncoder()
         return jsonEncoder
     }()
-    
+
     public init(clientId: String?, secret: String?) {
         self.clientId = clientId
         self.secret = secret
@@ -217,6 +216,141 @@ open class SbankenClient: NSObject {
                         failure(nil)
                     } else {
                         success(transferResponse)
+                    }
+                } else {
+                    failure(nil)
+                }
+            }).resume()
+        }
+    }
+    
+    public func efaktura(userId: String,
+                         eFakturaId: String,
+                         success: @escaping (EFakturaResponse) -> Void,
+                         failure: @escaping (Error?) -> Void) {
+        accessToken(clientId: clientId, secret: secret) { (token) in
+            guard token != nil else {
+                failure(nil)
+                return
+            }
+
+            let urlString = "\(Constants.baseUrl)/exec.bank/api/v1/EFakturas/\(eFakturaId)"
+            
+            guard var request = RequestHelper.urlRequest(urlString,
+                                                         token: token!,
+                                                         parameters: [:]) else { return }
+
+            request.setValue(userId, forHTTPHeaderField: "CustomerID")
+
+            self.urlSession.dataTask(with: request, completionHandler: { (data, _, error) in
+                guard data != nil, error == nil else {
+                    failure(error)
+                    return
+                }
+                
+                if let eFakturaResponse = try? self.decoder.decode(EFakturaResponse.self, from: data!) {
+                    if eFakturaResponse.isError {
+                        failure(nil)
+                    } else {
+                        success(eFakturaResponse)
+                    }
+                } else {
+                    failure(nil)
+                }
+            }).resume()
+        }
+    }
+
+    public func eFakturas(userId: String,
+                          startDate: Date,
+                          endDate: Date = Date(),
+                          status: String = "ALL",
+                          length: Int = 100,
+                          index: Int = 0,
+                          success: @escaping (EFakturasResponse) -> Void,
+                          failure: @escaping (Error?) -> Void) {
+        accessToken(clientId: clientId, secret: secret) { (token) in
+            guard token != nil else {
+                failure(nil)
+                return
+            }
+
+            let urlString = "\(Constants.baseUrl)/exec.bank/api/v1/EFakturas"
+            let formatter = ISO8601DateFormatter()
+            let parameters = [
+                "index": "\(index)",
+                "length": "\(length)",
+                "startDate": formatter.string(from: startDate),
+                "endDate": formatter.string(from: endDate),
+                "status": status
+                ] as [String: Any]
+
+            guard var request = RequestHelper.urlRequest(urlString,
+                                                         token: token!,
+                                                         parameters: parameters) else { return }
+
+            request.setValue(userId, forHTTPHeaderField: "CustomerID")
+
+            self.urlSession.dataTask(with: request, completionHandler: { (data, huh, error) in
+                guard data != nil, error == nil else {
+                    failure(error)
+                    return
+                }
+                
+                if let eFakturasResponse = try? self.decoder.decode(EFakturasResponse.self, from: data!) {
+                    if eFakturasResponse.isError {
+                        failure(nil)
+                    } else {
+                        success(eFakturasResponse)
+                    }
+                } else {
+                    failure(nil)
+                }
+            }).resume()
+        }
+    }
+    
+    public func payEFaktura(userId: String,
+                            eFakturaId: String,
+                            fromAccountId: String,
+                            payMinimumAmount: Bool,
+                            success: @escaping (EFakturaPaymentResponse) -> Void,
+                            failure: @escaping (Error?) -> Void) {
+        accessToken(clientId: clientId, secret: secret) { (token) in
+            guard token != nil else {
+                failure(nil)
+                return
+            }
+            
+            let urlString = "\(Constants.baseUrl)/exec.bank/api/v1/EFakturas"
+            guard var request = RequestHelper.urlRequest(urlString,
+                                                         token: token!) else { return }
+            
+            let paymentRequest = EFakturaPaymentRequest(eFakturaId: eFakturaId,
+                                                        accountId: fromAccountId,
+                                                        payOnlyMinimumAmount: payMinimumAmount)
+            
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue(userId, forHTTPHeaderField: "CustomerID")
+            
+            if let body = try? self.encoder.encode(paymentRequest) {
+                request.httpBody = body
+            } else {
+                failure(nil)
+            }
+            
+            self.urlSession.dataTask(with: request, completionHandler: { (data, _, error) in
+                guard data != nil, error == nil else {
+                    failure(error)
+                    return
+                }
+                
+                if let paymentResponse = try? self.decoder.decode(EFakturaPaymentResponse.self, from: data!) {
+                    if paymentResponse.isError {
+                        failure(nil)
+                    } else {
+                        success(paymentResponse)
                     }
                 } else {
                     failure(nil)

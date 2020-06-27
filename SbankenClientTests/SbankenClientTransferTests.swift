@@ -117,13 +117,13 @@ class SbankenClientTransferTests: XCTestCase {
         waitForExpectations(timeout: 10)
     }
     
-    func transferRequest(userId: String, fromAccount: String = "1234", toAccount: String = "5678",
+    func transferRequest(userId: String, fromAccountId: String = "1234", toAccountId: String = "5678",
                          message: String = "MESSAGE", amount: Float = 10.0,
                          success: @escaping (TransferResponse) -> Void = { _ in },
                          failure: @escaping (Error?) -> Void = { _ in }) -> URLRequest? {
         client?.transfer(userId: userId,
-                         fromAccount: fromAccount,
-                         toAccount: toAccount,
+                         fromAccountId: fromAccountId,
+                         toAccountId: toAccountId,
                          message: message,
                          amount: amount,
                          success: success,
